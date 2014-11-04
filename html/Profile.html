@@ -15,24 +15,24 @@
 			<div>
 				<table align="center">
 					<tr>
-						<td><h4> Name *</h4></td>
-						<td><input type="text" name="userName"/></td>
+						<td><h4> Name</h4></td>
+						<td><input type="text" name="userName" ng-model = "newUser.name" maxlength = "15" required /></td>
 					</tr>
 					<tr>
-						<td> <h4>Age *</h4></td>
-						<td><input type="text" name="age" /></td>
+						<td> <h4>Age</h4></td>
+						<td><input type="text" name="age" ng-model = "newUser.age" required/></td>
 					</tr>
 					<tr>
-						<td> <h4> Phone *</h4></td>
-						<td><input type="text" name="phone" /></td>
+						<td> <h4> Phone</h4></td>
+						<td><input type="text" ng-model = "newUser.phone" name="phone" required/></td>
 					</tr>
 					<tr>
-						<td><h4>Email *</h4></td>
-						<td><input type="text" name="email" /></td>
+						<td><h4>Email</h4></td>
+						<td><input type="text" ng-model = "newUser.email" name="email" required/></td>
 					</tr>
 					<tr>
-						<td><h4>Address *</h4></td>
-						<td><textarea name = "address" rows="5",cols="25"></textarea></td>
+						<td><h4>Address</h4></td>
+						<td><textarea name = "address" rows="5",cols="25" ng-model = "newUser.address" maxlength = "50" required></textarea></td>
 					</tr>
 				</table>
 

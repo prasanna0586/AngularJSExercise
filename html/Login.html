@@ -2,10 +2,11 @@
 	<form id = "logIn" name = "logIn" ng-submit = "validateUser()">
 		<table>
 			<tr>
-				<td>User Name</td><td><input ng-model = "user.username" type = "text" id = "userName" name = "userName" value = ""></input></td>
+				<td>User Name</td><td><input ng-model = "user.username" type = "text" id = "userName" name = "userName" value = "" maxlength = "8" required></input></td>
 			</tr>
 			<tr>
-				<td>Password</td><td><input ng-model = "user.password" type = "password" id = "password" name = "password" value = ""></input></td>
+				<td>Password</td><td><input ng-model = "user.password" type = "password" id = "password" name = "password" 
+				value = "" required></input></td>
 			</tr>
 			<tr align = "center">
 				<td><input type = "submit" id = "logInToApp" name = "logInToApp" value = "Sign In"></input></td>
