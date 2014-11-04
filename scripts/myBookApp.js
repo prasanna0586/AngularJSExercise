@@ -17,5 +17,10 @@ myBookApp.config(function ($routeProvider){
 		controller: 'ProfileController',
 		templateUrl: 'Profile.html'
 	})
-	.otherwise({redirectTo: '/'});
+	/* .when('/feedAndProfile',
+	{
+		controller: 'FeedController',
+		templateUrl: 'FeedAndProfile.html'
+	}) */
+	.otherwise({redirectTo: '/login'});
 });

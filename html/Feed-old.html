@@ -1,0 +1,15 @@
+<div>
+	<table id = "keyInFeed" name = "keyInFeed" align = "center">
+		<tr>
+			<td><input type = "text" size = "100" ng-model = "enterFeed.text" value = "Text Feed or URL Feed"></td>
+			<td><input type = "button" value = "Post" ng-click = "postData()"></td>
+		</tr>
+	</table>
+	<!-- <table id = "feedContent" name = "feedContent" align = "center">
+	</table> -->
+	<div ng-repeat = "feed in enterFeed">
+		<div>
+			{{feed.text}} {{feed.date}}
+		</div>
+	</div>
+</div>
