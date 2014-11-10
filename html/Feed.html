@@ -5,18 +5,21 @@
 	</div>
 	<!-- Menu Div ends -->
 	<!-- Feed Div starts -->
-	<div>
-		<table id = "keyInFeed" name = "keyInFeed" align = "center">
-			<tr>
-				<td><input type = "text" size = "100" ng-model = "enterFeed.text" value = "Text Feed or URL Feed"></td>
-				<td><input type = "button" value = "Post" ng-click = "postData()"></td>
-			</tr>
-		</table>
-		<div ng-repeat = "feed in enterFeed">
-			<div>
-				{{feed.text}} {{feed.date}}
-				 <button class = "glyphicon glyphicon-remove" data-ng-click = "deleteFeed(feed.id)"></button>
-			</div>
+	<div class = "feedContainer">
+		<div class = "feedTextAndButton">
+			<table>
+				<tr>
+					<td><input type = "text" size = "75" ng-model = "enterFeed.text" value = "Text Feed or URL Feed"></td>
+					<td><input type = "button" value = "Post" ng-click = "postData()"></td>
+				</tr>
+			</table>
+		</div>
+		<div ng-repeat = "feed in enterFeed" class = "feedContent">
+			<table>
+				<tr>
+					<td>{{feed.text}} {{feed.date}}</td> <td></td> <td></td> <td></td><td><button class = "glyphicon glyphicon-remove" data-ng-click = "deleteFeed(feed.id)"></button></td>
+				</tr>
+			</table>
 		</div>
 	</div>
 	<!-- Feed Div ends -->

@@ -7,7 +7,6 @@
 		{
 			if(validateUserName() && validatePassword() && validateUser())
 			{
-				console.log("Valid User....");
 				$location.path("/feed");
 			}	
 		};
@@ -26,7 +25,9 @@
 			}
 			if(!validUser)
 			{
-				alert("Your Username or Password is Incorrect");
+				alert("Your User name or Password is Incorrect");
+				$scope.user.username = '';
+				$scope.user.password = '';
 			}
 			return validUser;
 		}
@@ -37,6 +38,7 @@
 			if($scope.user.password.length < 6)
 			{
 				alert("Password cannot be less than 6 characters.");
+				$scope.user.username = '';
 				$scope.user.password = "";
 				isValidPassword = false;
 			}
@@ -48,7 +50,7 @@
 			var validKeyRegex = /[a-zA-Z0-9]$/, isValidUserName = true;
 			if(!(validKeyRegex.test($scope.user.username)))
 			{
-				alert("Username can only be alphanumeric. Special characters are not allowed...");
+				alert("User name can only be alphanumeric. Special characters are not allowed...");
 				$scope.user.username = "";
 				isValidUserName = false;
 			}
@@ -81,12 +83,12 @@
 			var text = $scope.enterFeed.text;
 			var dateAndTime = dateTime();
 			newFeed = {id: feedId, text: text, date: dateAndTime};
-			$scope.enterFeed.push(newFeed);	
+			$scope.enterFeed.push(newFeed);
+			$scope.enterFeed.text = ''
 		};
 		
 		$scope.deleteFeed = function(id)
 		{
-			console.log("Inside deleteFeed");
 			for(var i = 0; i < $scope.enterFeed.length; i++)
 			{
 				if($scope.enterFeed[i].id === id)
@@ -160,16 +162,18 @@
 		
 		function validateAge()
 		{
-			var isValidAge = true, validAgeRegex = /[0-9]$/;
+			var isValidAge = true, validAgeRegex = /[1-9]$/;
 			if($scope.newUser && !validAgeRegex.test($scope.newUser.age))
 			{
 				isValidAge = false;
-				alert("Age can be only numbers");
+				alert("Age can be only numbers and should be greater than 1");
+				$scope.newUser.age = "";
 			}
 			if($scope.newUser && isValidAge && !($scope.newUser.age.length == 1 || $scope.newUser.age.length == 2))
 			{
 				isValidAge = false;
 				alert("Age cannot be more than 2 digits");
+				$scope.newUser.age = "";
 			}
 			return isValidAge;
 		}
@@ -181,11 +185,13 @@
 			{
 				isValidPhoneNumber = false;
 				alert("Phone Number can be only numbers");
+				$scope.newUser.phone = "";
 			}
 			if($scope.newUser && isValidPhoneNumber && $scope.newUser.phone.length != 10)
 			{
 				isValidPhoneNumber = false;
 				alert("Phone number should be 10 digits");
+				$scope.newUser.phone = "";
 			}
 			return isValidPhoneNumber;
 		}
@@ -197,6 +203,7 @@
 			{
 				isValidEmail=false;
 				alert("Please enter a valid email address");
+				$scope.newUser.email = "";
 			}
 			
 			return isValidEmail;

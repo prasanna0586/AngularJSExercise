@@ -5,49 +5,43 @@
 	</div>
 	<!-- Menu Div ends -->
 	<!-- Profile div starts -->
-	<div>
-		<div>
-			<table align= "right">
-				<tr> 
-					<td><input type='file' id='file' accept='image/*'/></td>
-				</tr>    
-				<button ng-click="openFile()">Display</button>
-				<tr> 
-					<td><img id ="output" ng-src="{{data}}" width="152" height="229"></img></td>
-				</tr>
-			</table>
-		</div>
-		<div>
-			<table align="center">
-				<tr>
-					<td><h4> Name</h4></td>
-					<td><input type="text" name="userName" ng-model = "newUser.name" maxlength = "15" required /></td>
-				</tr>
-				<tr>
-					<td> <h4>Age</h4></td>
-					<td><input type="text" name="age" ng-model = "newUser.age" maxlength = "2" required/></td>
-				</tr>
-				<tr>
-					<td> <h4> Phone</h4></td>
-					<td><input type="text" ng-model = "newUser.phone" name="phone" maxlength = "10" required/></td>
-				</tr>
-				<tr>
-					<td><h4>Email</h4></td>
-					<td><input type="text" ng-model = "newUser.email" name="email" required/></td>
-				</tr>
-				<tr>
-					<td><h4>Address</h4></td>
-					<td><textarea name = "address" rows="5",cols="25" ng-model = "newUser.address" maxlength = "50" required></textarea></td>
-				</tr>
-			</table>						
-		</div>
-		<div>
-			<table align="center">
-				<tr>
-					<td><button ng-click = "saveUserDetails()" align="center">Save</button><td>
-				</tr>
-			</table>
-		</div>
+	<div class = "profileMain">
+		<table>
+			<tr>
+				<td><h4> Name</h4></td>
+				<td><input type="text" name="userName" ng-model = "newUser.name" maxlength = "15" required /></td>
+			</tr>
+			<tr>
+				<td> <h4>Age</h4></td>
+				<td><input type="text" name="age" ng-model = "newUser.age" maxlength = "2" required/></td>
+			</tr>
+			<tr>
+				<td> <h4> Phone</h4></td>
+				<td><input type="text" ng-model = "newUser.phone" name="phone" maxlength = "10" required/></td>
+			</tr>
+			<tr>
+				<td><h4>Email</h4></td>
+				<td><input type="text" ng-model = "newUser.email" name="email" required/></td>
+			</tr>
+			<tr>
+				<td><h4>Address</h4></td>
+				<td><textarea name = "address" rows="5",cols="45" ng-model = "newUser.address" maxlength = "50" required></textarea></td>
+			</tr>
+			<tr align = "center">
+				<td><button ng-click = "saveUserDetails()">Save</button><td>
+			</tr>
+		</table>
+		<table align = "center">
+			<tr> 
+				<td><input type='file' id='file' accept='image/*'/></td>
+			</tr> 
+			<tr align = "right">
+				<td><button ng-click="openFile()">Display</button></td>
+			</tr>
+			<tr> 
+				<td><img id ="output" ng-src="{{data}}" width="152" height="229"></img></td>
+			</tr>
+		<table>						
 	</div>
 	<!-- Profile div ends -->
 </div>

@@ -1,17 +1,19 @@
 <div>
-	<form id = "logIn" name = "logIn" ng-submit = "validateUser()">
-		<table>
-			<tr>
-				<td>User Name</td><td><input ng-model = "user.username" type = "text" id = "userName" name = "userName" value = "" maxlength = "8" required></input></td>
-			</tr>
-			<tr>
-				<td>Password</td><td><input ng-model = "user.password" type = "password" id = "password" name = "password" 
-				value = "" required></input></td>
-			</tr>
-			<tr align = "center">
-				<td><input type = "submit" id = "logInToApp" name = "logInToApp" value = "Sign In"></input></td>
-			</tr>
-		</table>
+	<form id = "logIn" name = "logIn" ng-submit = "validateUser()" class = "form-signin">
+		<h3 class="form-signin-heading">Please sign in</h3>
+		<!-- <div class = "container"> -->
+				<input ng-model = "user.username" type = "text" id = "userName" name = "userName" value = "" maxlength = "8" 
+				class="input-block-level" placeholder="User Name" required></input>
+				<br>
+				</br>
+				<input ng-model = "user.password" type = "password" id = "password" name = "password" 
+				value = "" class="input-block-level" placeholder="Password" required></input>
+				<br>
+				</br>
+		<!-- </div> -->
+		<div>
+				<button class="btn btn-large btn-primary" type="submit">Sign in</button>
+		</div>
 	</form>
 <!-- 	<img id = "loginPageImage" name = "loginPageImage" src = "Javascript.png"></img> -->
 </div>
